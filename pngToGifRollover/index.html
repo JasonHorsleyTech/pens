@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <!--
+            LiveJS: Automatically reload the page whenever the file contents have changed
+            License: http://livejs.com/license.txt
+            (MIT)
+     -->
+    <script src="http://livejs.com/live.js"></script>
+    <style>
+        .container {
+            /* Height of container row determins the margin-top of .anchor, if you want vert centered. Change here, change there. */
+            height: 150px;
+            width: 600px;
+            margin: auto;
+            background-color: blue;
+            cursor: hand;
+        }
+
+
+
+        .helpCont {
+            width:100px;
+            height:100%;
+            display:inline-block;
+        }
+        .anchor {
+            position:absolute;
+            /* Manually adjusted to hide the ears of the png, feel free to tweak */
+            height:68px;
+            width:100px;
+            /* Container height - no ears height / 2 === half the leftover vert margin */
+            /* Hardcoded values based on the height of the .helpCont parent... Could maybe do reactive heights and margins, but who cares */
+            margin-top:calc((150px - 65px) / 2);
+            overflow:hidden;
+        }
+        .png,
+        .gif {
+            position: absolute;
+            max-width:100%;
+            bottom:0;
+        }
+        .gif {
+            display: none;
+        }
+        .anchor:hover {
+            overflow:visible;
+        }
+        .anchor:hover .png {
+            display: none;
+        }
+        .anchor:hover .gif {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spacing -->
+    <div style='height:50px;width:100%'></div>
+    <!-- Example of something this HTML would eventually go in-->
+    <div class='container'>
+        <!-- Other stuff in main container as well, not integral-->
+        <div style='width:495px;height:100%;display:inline-block;'></div>
+
+        <!-- Main of pen here -->
+        <div class='helpCont'>
+            <div class='anchor'>
+                <img class='png' src='assets/rabbit.png' />
+                <img class='gif' src='assets/rabbit.gif' />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
